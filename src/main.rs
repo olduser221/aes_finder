@@ -1,9 +1,17 @@
 use std::env;
+// use process_memory_reader::Process;
 use sysinfo::{
     ProcessExt, 
     System, 
     SystemExt
 };
+
+// fn read_memory(process_id: u32, process_name: &str) {
+//     let process = Process::open_process(process_id).unwrap();
+//     let base_address = process.base_address(process_name).unwrap();
+//     process.read_u8(base_address).unwrap();
+//     println!("{:?}", process.read_u8(base_address + 0x127).unwrap());
+// }
 
 fn main() {
 
@@ -24,6 +32,7 @@ fn main() {
                     found_process = true;
                 }
                 println!("- PID: {}", pid);
+                // read_memory(*pid as u32, process.name());
             }
         }
 
